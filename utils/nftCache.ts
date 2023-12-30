@@ -19,7 +19,7 @@ export const addOffchainCachingTaskForMint = async (mintAddress: string) => {
     parent: tasksParent,
     task: {
       httpRequest: {
-        url: `https://1of1.tools/api/nfts/${mintAddress}/cache`,
+        url: `https://sold.luvnft.com/api/nfts/${mintAddress}/cache`,
         headers: {
           "Content-Type": "application/json",
           Authorization: HELIUS_AUTHORIZATION_SECRET,

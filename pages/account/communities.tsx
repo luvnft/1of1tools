@@ -91,8 +91,8 @@ const AccountPage: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>one / one tools</title>
-        <meta name="description" content="one / one tools" />
+        <title>🛒 SOLd</title>
+        <meta name="SOLd" content="We SOLd our" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="mt-4">

@@ -194,7 +194,7 @@ export const humanReadableTransaction = (
       ? transaction.events.nft?.nfts[0]
       : null;
   const url = useFirstPartyUrls
-    ? `https://1of1.tools/tx/${transaction.signature}${
+    ? `https://sold.luvnft.com/tx/${transaction.signature}${
         isImported ? "?i=1" : ""
       }`
     : nft

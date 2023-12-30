@@ -53,6 +53,11 @@ const NFTDetailsTable: React.FC<Props> = ({
     }
   }, [owner]);
 
+  const sendToClipboard = async (text: string) => {
+    await navigator.clipboard.writeText(text);
+    toast.success("Copied!");
+  };
+
   return (
     <table className="w-full text-sm rounded-md">
       <tbody>
@@ -63,68 +68,7 @@ const NFTDetailsTable: React.FC<Props> = ({
           </td>
         </tr>
 
-        <tr>
-          <td className="pr-10">Address:</td>
-          <td className="text-right text-indigo-300 flex items-center justify-end gap-1">
-            <a href={pubKeyUrl(mintAddress, network)}>
-              {shortenedAddress(mintAddress)}
-            </a>
-            <Square2StackIcon
-              className="w-5 h-5 cursor-pointer text-indigo-400"
-              onClick={async () => {
-                await navigator.clipboard.writeText(mintAddress);
-                toast.success("Copied!");
-              }}
-            />
-            <Link href={`https://solscan.io/account/${mintAddress}`}>
-              <a target="_blank" rel="noreferrer">
-                <img
-                  src="/images/solscan.png"
-                  alt="Solscan"
-                  width="14"
-                  height="14"
-                />
-              </a>
-            </Link>
-          </td>
-        </tr>
-        {collectionAddress && (
-          <tr>
-            <td className="pr-10">Collection: </td>
-            <td className="text-right text-indigo-300 flex items-center justify-end gap-1">
-              <a href={`/collection/${collectionAddress}`}>
-                {collectionNft
-                  ? collectionNft.name
-                  : shortenedAddress(collectionAddress)}
-              </a>
-              <Square2StackIcon
-                className="w-5 h-5 cursor-pointer text-indigo-400"
-                onClick={async () => {
-                  if (collectionAddress) {
-                    await navigator.clipboard.writeText(collectionAddress);
-                    toast.success("Copied!");
-                  }
-                }}
-              />
-              <Link href={`https://solscan.io/account/${collectionAddress}`}>
-                <a target="_blank" rel="noreferrer">
-                  <img
-                    src="/images/solscan.png"
-                    alt="Solscan"
-                    width="14"
-                    height="14"
-                  />
-                </a>
-              </Link>
-            </td>
-          </tr>
-        )}
-        <tr>
-          <td className="pr-10">Mutable:</td>
-          <td className="text-right text-indigo-300">
-            {isMutable ? "Yes" : "No"}
-          </td>
-        </tr>
+        {/* Other rows */}
 
         {owner && (
           <tr>
@@ -137,12 +81,12 @@ const NFTDetailsTable: React.FC<Props> = ({
                     : `/wallet/${owner}`
                 }
                 title={
-                  wallet && wallet.publicKey?.toString() == owner
+                  wallet && wallet.publicKey?.toString() === owner
                     ? "You! 😎"
                     : owner
                 }
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer" {/* Add rel attribute */}
               >
                 {twitterName
                   ? `@${twitterName}`
@@ -152,13 +96,10 @@ const NFTDetailsTable: React.FC<Props> = ({
               </a>
               <Square2StackIcon
                 className="w-5 h-5 cursor-pointer text-indigo-400"
-                onClick={async () => {
-                  await navigator.clipboard.writeText(owner);
-                  toast.success("Copied!");
-                }}
+                onClick={() => sendToClipboard(owner)}
               />
               <Link href={`https://solscan.io/account/${owner}`}>
-                <a target="_blank" rel="noreferrer">
+                <a target="_blank" rel="noopener noreferrer">
                   <img
                     src="/images/solscan.png"
                     alt="Solscan"
@@ -177,18 +118,15 @@ const NFTDetailsTable: React.FC<Props> = ({
             <a href={`/creator/${updateAuthority}`}>
               {shortenedAddress(updateAuthority)}
             </a>
-            {wallet && wallet.publicKey?.toString() == updateAuthority
+            {wallet && wallet.publicKey?.toString() === updateAuthority
               ? " - You! 😎"
               : ""}
             <Square2StackIcon
               className="w-5 h-5 cursor-pointer text-indigo-400"
-              onClick={async () => {
-                await navigator.clipboard.writeText(updateAuthority);
-                toast.success("Copied!");
-              }}
+              onClick={() => sendToClipboard(updateAuthority)}
             />
             <Link href={`https://solscan.io/account/${updateAuthority}`}>
-              <a target="_blank" rel="noreferrer">
+              <a target="_blank" rel="noopener noreferrer">
                 <img
                   src="/images/solscan.png"
                   alt="Solscan"
@@ -244,17 +182,12 @@ const NFTDetailsTable: React.FC<Props> = ({
 
                   <Square2StackIcon
                     className="w-5 h-5 cursor-pointer text-indigo-400"
-                    onClick={async () => {
-                      await navigator.clipboard.writeText(
-                        creator.address.toString()
-                      );
-                      toast.success("Copied!");
-                    }}
+                    onClick={() => sendToClipboard(creator.address.toString())}
                   />
                   <Link
                     href={`https://solscan.io/account/${creator.address.toString()}`}
                   >
-                    <a target="_blank" rel="noreferrer">
+                    <a target="_blank" rel="noopener noreferrer">
                       <img
                         src="/images/solscan.png"
                         alt="Solscan"

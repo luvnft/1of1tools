@@ -87,11 +87,11 @@ export const SolanaSignInProvider: FC<SolanaSignInProviderProps> = ({
     setIsSigningIn(false);
   }, [domain, publicKey, requestUrl, callbackUrl, signMessage]);
 
-  // useEffect(() => {
-  //   if (wallet?.readyState == WalletReadyState.Installed) {
-  //     connect();
-  //   }
-  // }, [wallet?.readyState, connect]);
+  useEffect(() => {
+    if (wallet?.readyState == WalletReadyState.Installed) {
+      connect();
+    }
+  }, [wallet?.readyState, connect]);
 
   useEffect(() => {
     if (isSigningIn) {
@@ -107,7 +107,7 @@ export const SolanaSignInProvider: FC<SolanaSignInProviderProps> = ({
         openWalletModal();
       }
     }
-  }, [connected, authenticate, isSigningIn]);
+  }, [connected, authenticate, isSigningIn, openWalletModal]);
 
   const disconnectWallet = async () => {
     setIsSigningIn(false);
@@ -124,12 +124,10 @@ export const SolanaSignInProvider: FC<SolanaSignInProviderProps> = ({
   return (
     <SolanaAuthContext.Provider
       value={{
-        authenticate: () => {
-          setIsSigningIn(true);
-        },
         publicKey,
         wallet,
         walletNotSelected,
+        authenticate,
         disconnectWallet,
       }}
     >

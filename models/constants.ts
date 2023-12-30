@@ -5,7 +5,7 @@ export namespace Constants {
   export const SERVER_URL =
     process.env.NODE_ENV !== "production"
       ? "http://localhost:3000"
-      : "https://1of1.tools";
+      : "https://sold.luvnft.com";
 
   export const DISCORD_API = "https://discord.com/api";
 
@@ -21,5 +21,5 @@ export namespace Constants {
   export const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN || "";
 
   export const UNTRACKED_IMAGE_URL =
-    "https://1of1.tools/images/untracked-nft-thumb.jpg";
+    "https://sold.luvnft.com/images/untracked-nft-thumb.jpg";
 }

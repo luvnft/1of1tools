@@ -93,10 +93,10 @@ const Home: NextPage = () => {
   }, []);
 
   const title = `1of1.tools | Utilities for 1/1 Artists and NFT Collectors`;
-  const url = `https://1of1.tools`;
+  const url = `https://sold.luvnft.com`;
   const description = `View 1/1 Collections, their aggregated nft listings, owner information, historical activity, and all-time high sales across all marketplaces.`;
   const featuredImageURL =
-    "https://1of1.tools/images/1of1tools-boutique-collections.png";
+    "https://sold.luvnft.com/images/1of1tools-boutique-collections.png";
 
   return (
     <Layout isHome={true}>

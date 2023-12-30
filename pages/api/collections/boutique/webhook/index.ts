@@ -71,7 +71,7 @@ apiRoute.post(async (req, res) => {
         task: {
           name: taskName,
           httpRequest: {
-            url: "https://1of1.tools/api/collections/boutique/webhook/handle-task",
+            url: "https://sold.luvnft.com/api/collections/boutique/webhook/handle-task",
             headers: {
               "Content-Type": "application/json",
               Authorization: HELIUS_AUTHORIZATION_SECRET,

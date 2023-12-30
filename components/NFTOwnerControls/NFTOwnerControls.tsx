@@ -91,7 +91,7 @@ const NFTOwnerControls: React.FC<Props> = ({ nft, wallet, imageUrl }) => {
       <a
         href={proxyDownloadImgUrl(imageUrl)}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer" // Add rel attribute here
         className="w-full"
       >
         <button className="button thinbutton w-full">Download Image</button>

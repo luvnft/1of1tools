@@ -56,7 +56,7 @@ export const getEventDescription = async (
   const nft = nftEvent.nfts?.length > 0 ? nftEvent.nfts[0] : null;
 
   const source = nftEvent.source;
-  const url = `https://1of1.tools/nft/${nft?.mint}?i=1`;
+  const url = `https://sold.luvnft.com/nft/${nft?.mint}?i=1`;
   const sourceURL = nft ? urlForSource(source, nft.mint) : null;
 
   const typeText = humanReadableEventPastTense(nftEvent.type);
@@ -66,7 +66,7 @@ export const getEventDescription = async (
 
   if (nftEvent.seller) {
     let sellerURL = nftEvent?.seller
-      ? `https://1of1.tools/wallet/${nftEvent.seller}`
+      ? `https://sold.luvnft.com/wallet/${nftEvent.seller}`
       : null;
     let sellerName = shortenedAddress(nftEvent.seller);
     let sellerPt2: string = "";
@@ -92,7 +92,7 @@ export const getEventDescription = async (
 
   if (nftEvent.buyer) {
     let buyerURL = nftEvent?.buyer
-      ? `https://1of1.tools/wallet/${nftEvent.buyer}`
+      ? `https://sold.luvnft.com/wallet/${nftEvent.buyer}`
       : null;
     let buyerName = shortenedAddress(nftEvent.buyer);
     let buyerPt2: string = "";
@@ -267,14 +267,14 @@ const NFTPage: NextPage<Props> = ({
   const title = `1of1.tools - ${humanReadableEventPastTense(event.type)}: ${
     nftMetadata.name
   } | ${event.signature}`;
-  const url = `https://1of1.tools/tx/${event.signature}?i=${
+  const url = `https://sold.luvnft.com/tx/${event.signature}?i=${
     isImported ? "1" : "0"
   }`;
   const description = `View ${nftMetadata.name} aggregated nft listings, owner information, and historical activity across all marketplaces.`;
   const featuredImageURL =
     nftMetadata.cachedImage ??
     nftMetadata.image ??
-    "https://1of1.tools/images/1of1tools-boutique-collections.png";
+    "https://sold.luvnft.com/images/1of1tools-boutique-collections.png";
 
   return (
     <Layout>

@@ -226,21 +226,21 @@ const CollectionPage: NextPage<Props> = ({ collection }) => {
       searchTerm,
       attributeSelections
     );
-  }, [allNftsMetadata, filter, searchTerm, attributeSelections]);
+  }, [allNftsMetadata, filter, searchTerm, attributeSelections, listings]);
 
   useEffect(() => {
     getNfts();
-  }, [listings]);
-
+  }, [listings, getNfts, collection.mintAddresses]);
+  
   useEffect(() => {
     loadListings();
-  }, []);
+  }, [collection.mintAddresses]);
 
   const title = `1of1.tools | ${collection.name} NFT Listings`;
-  const url = `https://1of1.tools/boutique/${collection.slug}`;
+  const url = `https://sold.luvnft.com/boutique/${collection.slug}`;
   const description = `View ${collection.name} aggregated nft listings, owner information, historical activity, and all-time high sales across all marketplaces.`;
   const featuredImageURL = collection.imageURL
-    ? `https://1of1.tools/api/assets/collection/${
+    ? `https://sold.luvnft.com/api/assets/collection/${
         collection.slug
       }/640?originalURL=${encodeURIComponent(collection.imageURL)}`
     : null;
@@ -330,7 +330,7 @@ const CollectionPage: NextPage<Props> = ({ collection }) => {
                       return attributeValue !== null ? (
                         <label
                           key={attributeName}
-                          className="button thinbutton"
+                          className="button thin button"
                           onClick={() =>
                             removeSelection(attributeName, attributeValue)
                           }

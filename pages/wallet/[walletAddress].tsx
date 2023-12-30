@@ -79,7 +79,7 @@ const WalletPage: NextPage = () => {
         loadTwitterName(walletAddress).then((name) => setTwitterName(name));
       }
     }
-  }, [walletAddress]);
+  }, [walletAddress, bonfidaName, twitterName]);
 
   useEffect(() => {
     if (walletAddress) {
@@ -87,7 +87,7 @@ const WalletPage: NextPage = () => {
         setLoading(false);
       });
     }
-  }, [walletAddress]);
+  }, [walletAddress, getMoreNfts]);
 
   useEffect(() => {
     if (walletInput && nfts.size == 0 && !isLoading) {
@@ -107,14 +107,14 @@ const WalletPage: NextPage = () => {
         }
       });
     }
-  }, [walletInput]);
+  }, [walletInput, nfts.size, isLoading]);
 
   return (
     <Layout>
       <div>
         <Head>
-          <title>one / one tools</title>
-          <meta name="description" content="one / one tools" />
+          <title>🛒 SOLd</title>
+          <meta name="SOLd" content="We SOLd out on Solana" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
 

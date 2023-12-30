@@ -78,16 +78,16 @@ apiRoute.put(async (req, res) => {
       if (isNew) {
         await sendMessage(
           thread,
-          `one / one: You are now setup to receive notifications about the NFT ${shortenedAddress(
+          `SOLd: You are now setup to receive notifications about the NFT ${shortenedAddress(
             mintAddress
-          )}! Change your preferences at any time on https://1of1.tools`
+          )}! Change your preferences at any time on https://sold.luvnft.com`
         );
       } else {
         await sendMessage(
           thread,
-          `one / one: Your notification preferences about the NFT ${shortenedAddress(
+          `SOLd: Your notification preferences about the NFT ${shortenedAddress(
             mintAddress
-          )} have been updated. Change them again at any time on https://1of1.tools`
+          )} have been updated. Change them again at any time on https://sold.luvnft.com`
         );
       }
       res.status(200).json({

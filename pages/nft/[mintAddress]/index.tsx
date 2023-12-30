@@ -339,15 +339,15 @@ const NFTPage: NextPage<Props> = ({ nftMetadata, cachedImage, isImported }) => {
     return <ErrorPage message={errorMessage} />;
   } else {
     const title = `1of1.tools - ${offChainData.name}: ${onChainData.mint}`;
-    const url = `https://1of1.tools/nft/${nftMetadata.mint}`;
+    const url = `https://sold.luvnft.com/nft/${nftMetadata.mint}`;
     const description = `View ${offChainData.name} aggregated nft listings, owner information, and historical activity across all marketplaces.`;
     const featuredImageURL = cachedImage
       ? cachedImage
       : offChainData.image
-      ? `https://1of1.tools/api/assets/nft/${
+      ? `https://sold.luvnft.com/api/assets/nft/${
           nftMetadata.mint
         }/640?originalURL=${encodeURIComponent(offChainData.image)}`
-      : "https://1of1.tools/images/1of1tools-boutique-collections.png";
+      : "https://sold.luvnft.com/images/1of1tools-boutique-collections.png";
 
     return (
       <Layout>
@@ -456,7 +456,7 @@ const NFTPage: NextPage<Props> = ({ nftMetadata, cachedImage, isImported }) => {
                             </label>
                             <div className="flex gap-2 items-center text-3xl">
                               <span>
-                                {(listing.activeListings[0]?.amount ?? 0) /
+                                {(listing.activeListings[0]!.amount ?? 0) /
                                   LAMPORTS_PER_SOL}
                               </span>
                               <svg

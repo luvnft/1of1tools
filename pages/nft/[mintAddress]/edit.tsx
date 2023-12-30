@@ -90,7 +90,7 @@ const EditPage: NextPage = () => {
         setLoading(false);
       });
     }
-  }, [mintAddress]);
+  }, [mintAddress, isLoading]);
 
   const updateNFT = async (
     metadata: NFTFormData,
@@ -299,8 +299,8 @@ const EditPage: NextPage = () => {
     <Layout>
       <div>
         <Head>
-          <title>one / one tools</title>
-          <meta name="description" content="one / one tools" />
+          <title>🛒 SOLd</title>
+          <meta name="SOLd" content="We SOLd out on Solana." />
           <link rel="icon" href="/favicon.ico" />
         </Head>
 

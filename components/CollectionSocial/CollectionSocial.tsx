@@ -15,7 +15,7 @@ const CollectionSocial: React.FC<Props> = ({ collection }) => {
         <a
           href={collection.twitterURL}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer" // Moved rel attribute here
           className="px-1 sm:py-1 text-indigo-400 hover:text-white"
         >
           <TwitterIcon className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -25,7 +25,7 @@ const CollectionSocial: React.FC<Props> = ({ collection }) => {
         <a
           href={collection.discordURL}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer" // Moved rel attribute here
           className="px-1 sm:py-1 text-indigo-400 hover:text-white"
         >
           <DiscordIcon className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -35,7 +35,7 @@ const CollectionSocial: React.FC<Props> = ({ collection }) => {
         <a
           href={collection.webURL}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer" // Moved rel attribute here
           className="px-1 sm:py-1 text-indigo-400 hover:text-white"
         >
           <GlobeAltIcon className="w-4 h-4 sm:w-5 sm:h-5" />

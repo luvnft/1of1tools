@@ -96,16 +96,16 @@ apiRoute.put(async (req, res) => {
         if (isNew) {
           await sendMessage(
             thread,
-            `one / one: You are now setup to receive notifications about the creator ${shortenedAddress(
+            `SOLd: You are now setup to receive notifications about the creator ${shortenedAddress(
               accountAddress
-            )}! Change your preferences at any time on https://1of1.tools`
+            )}! Change your preferences at any time on https://sold.luvnft.com`
           );
         } else {
           await sendMessage(
             thread,
-            `one / one: Your notification preferences about the creator ${shortenedAddress(
+            `SOLd: Your notification preferences about the creator ${shortenedAddress(
               accountAddress
-            )} have been updated. Change them again at any time on https://1of1.tools`
+            )} have been updated. Change them again at any time on https://sold.luvnft.com`
           );
         }
 
@@ -166,7 +166,7 @@ apiRoute.put(async (req, res) => {
           const embed = new EmbedBuilder()
             .setColor(0x3730a3)
             .setTitle(shortPubKey(accountAddress))
-            .setURL(`https://1of1.tools/creator/${accountAddress}`)
+            .setURL(`https://sold.luvnft.com/creator/${accountAddress}`)
             .setAuthor({
               name: "Creator Subscription",
             })

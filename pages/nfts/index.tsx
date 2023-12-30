@@ -60,14 +60,14 @@ const NftsPage: NextPage = () => {
         setLoading(false);
       });
     }
-  }, [mintAddresses]);
+  }, [mintAddresses, nfts.size, isLoading, getMoreNfts]);
 
   return (
     <Layout>
       <div>
         <Head>
-          <title>one / one tools</title>
-          <meta name="description" content="one / one tools" />
+          <title>🛒 SOLd</title>
+          <meta name="SOLd" content="We SOLd out on Solana" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
 

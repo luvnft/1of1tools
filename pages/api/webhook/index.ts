@@ -54,7 +54,7 @@ apiRoute.post(async (req, res) => {
         task: {
           name: taskName,
           httpRequest: {
-            url: "https://1of1.tools/api/webhook/handle-task",
+            url: "https://sold.luvnft.com/api/webhook/handle-task",
             headers: {
               "Content-Type": "application/json",
             },

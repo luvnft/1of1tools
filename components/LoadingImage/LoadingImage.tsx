@@ -9,6 +9,7 @@ export type LoadingImgProps = Omit<
   "src"
 > & {
   src: string;
+  alt?: string; // Adding alt prop
   backupSrc?: string | null;
   loader?: JSX.Element | null;
   unloader?: JSX.Element | null;
@@ -18,6 +19,7 @@ const passthroughContainer = (x: any) => x;
 
 const LoadingImage = ({
   src,
+  alt = "", // Assigning a default value for alt
   backupSrc = null,
   loader = null,
   unloader = null,
@@ -25,7 +27,7 @@ const LoadingImage = ({
 }: LoadingImgProps): JSX.Element | null => {
   const { loadedSrc, isLoading } = useImage({ src, backupSrc });
 
-  if (loadedSrc) return <img src={loadedSrc} {...imgProps} />;
+  if (loadedSrc) return <img src={loadedSrc} alt={alt} {...imgProps} />; // Adding alt prop to img element
   if (isLoading) return passthroughContainer(loader);
   if (unloader) return passthroughContainer(unloader);
 

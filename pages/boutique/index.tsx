@@ -333,10 +333,10 @@ const IndexPage: NextPage = () => {
   }, [session]);
 
   const title = `1of1.tools | Boutique NFT Collection Listings`;
-  const url = `https://1of1.tools/boutique`;
+  const url = `https://sold.luvnft.com/boutique`;
   const description = `View Boutique Collections and their aggregated nft listings, owner information, historical activity, and all-time high sales across all marketplaces.`;
   const featuredImageURL =
-    "https://1of1.tools/images/1of1tools-boutique-collections.png";
+    "https://sold.luvnft.com/images/1of1tools-boutique-collections.png";
 
   return (
     <Layout>

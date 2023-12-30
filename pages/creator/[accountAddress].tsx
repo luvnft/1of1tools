@@ -264,8 +264,8 @@ const CreatorPage: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>one / one tools</title>
-        <meta name="description" content="one / one tools" />
+        <title>🛒 SOLd</title>
+        <meta name="SOLd" content="We SOLd out on Solana" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>

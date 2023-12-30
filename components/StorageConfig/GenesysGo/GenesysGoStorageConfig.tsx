@@ -210,10 +210,10 @@ const GenesysGoStorageConfig: React.FC<Props> = ({ didChangeOptions }) => {
             <a
               href="https://jup.ag/swap/SOL-SHDW"
               target="_blank"
-              rel="noreferrer"
-            >
+              rel="noopener noreferrer"
+              >
               SHDW
-            </a>
+              </a>
             )
           </label>
           <div className="sm:flex sm:items-end space-x-2">

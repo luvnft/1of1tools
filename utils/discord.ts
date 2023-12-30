@@ -22,7 +22,7 @@ export const discordEmbedForTransaction = async (
   const nft = nftEvent.nfts?.length > 0 ? nftEvent.nfts[0] : null;
 
   const source = transaction.source;
-  const url = `https://1of1.tools/nft/${nft?.mint}?i=1`;
+  const url = `https://sold.luvnft.com/nft/${nft?.mint}?i=1`;
   const sourceURL = nft ? urlForSource(source, nft.mint) : null;
 
   const typeText = humanReadableEventPastTense(transaction.type);
@@ -32,7 +32,7 @@ export const discordEmbedForTransaction = async (
 
   if (nftEvent.seller) {
     let sellerURL = nftEvent?.seller
-      ? `https://1of1.tools/wallet/${nftEvent.seller}`
+      ? `https://sold.luvnft.com/wallet/${nftEvent.seller}`
       : null;
     let sellerName = shortenedAddress(nftEvent.seller);
     let sellerPt2: string = "";
@@ -56,7 +56,7 @@ export const discordEmbedForTransaction = async (
 
   if (nftEvent.buyer) {
     let buyerURL = nftEvent?.buyer
-      ? `https://1of1.tools/wallet/${nftEvent.buyer}`
+      ? `https://sold.luvnft.com/wallet/${nftEvent.buyer}`
       : null;
     let buyerName = shortenedAddress(nftEvent.buyer);
     let buyerPt2: string = "";

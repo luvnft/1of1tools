@@ -2,7 +2,7 @@
 
 1of1.tools is aimed to be a high performance NFT explorer and tool suite, serving the 1/1 creator and collector community. Users can search & browse NFTs by mint address / hashlist, creator address, owner wallet address, and collection address. In addition to Solana public keys, search supports both bonafida .sol addresses and twitter handles where available.
 
-https://1of1.tools
+https://sold.luvnft.com
 
 Creators can sign in to take actions on NFTs they are the update authority on, including editing an NFT (update media and metadata fields), or mint a brand new NFT.
 
