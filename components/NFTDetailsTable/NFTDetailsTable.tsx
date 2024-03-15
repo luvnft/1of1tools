@@ -86,7 +86,7 @@ const NFTDetailsTable: React.FC<Props> = ({
                     : owner
                 }
                 target="_blank"
-                rel="noopener noreferrer" {/* Add rel attribute */}
+                rel="noopener noreferrer"
               >
                 {twitterName
                   ? `@${twitterName}`
